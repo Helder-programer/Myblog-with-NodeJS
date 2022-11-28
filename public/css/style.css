@@ -38,11 +38,15 @@ main {
     padding: 20px 40px 20px 40px;
     margin-bottom: 20px;
     box-shadow: 0px 8px 12px rgb(169, 169, 169);
-    border-bottom: 1px solid rgb(106, 106, 106);
+    border-bottom: 2px solid rgb(106, 106, 106);
 }
 
 .post h1{
     margin: 0px 0px 10px 0px;
+}
+
+.post small {
+    font-size: 12pt;
 }
 
 #registration-form button {

@@ -3,12 +3,13 @@
     <input class="form-control" name="search_input" type="text" placeholder="Digite o que deseja pesquisar..." value="{{postToFilter}}" autocomplete="off">
     <button><i class="fa-solid fa-magnifying-glass"></i></button>
 </form>
-<h1>Posts Criados:</h1>
+<h1>Posts Criados</h1>
 {{#each post}}
 <div class="post">
+    <small>Data de criação: {{{formatDate createdAt}}}</small>
     <h1>{{titulo}}</h1>
     <p>{{conteudo}}</p>
     <a href="/editar/{{id}}" class="btn btn-success">Editar</a>
-    <a id="/deletar/{{id}}"  class="btn btn-danger">Deletar</a>
+    <a href="/deletar/{{id}}"  class="btn btn-danger">Deletar</a>
 </div>
 {{/each}}

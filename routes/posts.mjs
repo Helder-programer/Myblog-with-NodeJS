@@ -1,4 +1,5 @@
 import express from "express";
+import { Op } from "sequelize";
 import { Post } from '../models/Post.mjs';
 export const router = express.Router();
 
@@ -6,7 +7,7 @@ export const router = express.Router();
 router.get('/', (req, res) => {
     let postToFilter = req.query.search_input;
     if (postToFilter != null && postToFilter != "") {
-        Post.findAll({ where: { titulo: postToFilter } }, { order: [['id', 'ASC']] }).then(posts => {
+        Post.findAll({ where: { titulo: {[Op.like]:  `%${postToFilter}%` }} }, { order: [['id', 'ASC']] }).then(posts => {
             res.render('home', { post: posts, postToFilter: postToFilter });
         });
     } else {

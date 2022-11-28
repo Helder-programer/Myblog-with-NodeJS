@@ -1,7 +1,8 @@
 //IMPORTS
 import express from 'express';
+import moment from 'moment/moment.js';
 import path from 'path';
-import { router as postRouter} from './routes/posts.mjs';
+import { router as postRouter } from './routes/posts.mjs';
 import { fileURLToPath } from 'url';
 const app = express();
 import { engine } from 'express-handlebars';
@@ -18,7 +19,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //Config handlebars
-app.engine('handlebars', engine({ defaultLayout: 'main' }));
+app.engine('handlebars', engine({
+    defaultLayout: 'main',
+    helpers: {
+        formatDate: (date) => {
+            return moment(date).format('DD/MM/YYYY');
+        }
+    }
+}));
 app.set('view engine', 'handlebars');
 //Config static files
 app.use(express.static(path.join(__dirname, 'public')));
