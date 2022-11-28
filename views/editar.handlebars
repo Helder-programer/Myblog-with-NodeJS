@@ -1,0 +1,9 @@
+{{#post}}
+<form action="/salvar_edicao/{{id}}" method="post">
+    <p>Título:</p>
+    <input type="text" name="titulo" value="{{titulo}}">
+    <p>Conteúdo:</p>
+    <textarea name="conteudo" id="" cols="30" rows="10">{{conteudo}}</textarea>
+    <button class="btn btn-success">Editar</button>
+</form>
+{{/post}}

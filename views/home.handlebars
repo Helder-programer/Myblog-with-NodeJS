@@ -1,7 +1,13 @@
+<form action="" method="post" id="search-form">
+    <a class="btn btn-primary" href ="/cadastrar"><i class="fa-solid fa-plus" style="margin-right:5px;"></i>Cadastrar</a>
+    <input class="form-control" type="text" placeholder="Digite o que deseja pesquisar...">
+</form>
 <h1>Posts Criados:</h1>
 {{#each post}}
+<div class="post">
     <h1>{{titulo}}</h1>
     <p>{{conteudo}}</p>
-    <a href="/deletar/{{id}}"><button>Deletar</button></a>
-    <hr>
+    <a href="/editar/{{id}}" class="btn btn-success">Editar</a>
+    <a href="/deletar/{{id}}" class="btn btn-danger">Deletar</a>
+</div>
 {{/each}}
