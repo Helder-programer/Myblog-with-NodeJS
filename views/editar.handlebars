@@ -1,9 +1,9 @@
 {{#post}}
-<form action="/salvar_edicao/{{id}}" method="post">
+<form action="/salvar_edicao/{{id}}" method="post" id="alteration-form">
     <p>Título:</p>
-    <input type="text" name="titulo" value="{{titulo}}">
+    <input class="form-control" type="text" name="titulo" value="{{titulo}}" autocomplete="off">
     <p>Conteúdo:</p>
-    <textarea name="conteudo" id="" cols="30" rows="10">{{conteudo}}</textarea>
+    <textarea class="form-control" name="conteudo" id="" cols="30" rows="10">{{conteudo}}</textarea>
     <button class="btn btn-success">Editar</button>
 </form>
 {{/post}}
